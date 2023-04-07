@@ -1,6 +1,178 @@
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+img{
+margin-top: 50px;
+margin-left: -220px;
+    width: 550px;
+    height: auto;
+    object-fit: fill;
+
+transform: rotate(90deg);
+page-break-before: always;
+page-break-after: always;
+}
+body{
+  background-color: white;
+}
+ /* Rectangle 4 */
+
+h1{
+position: absolute;
+/* width: 1333px;
+height: 1812px; */
+text-align: left;
+font-family: 'Brother 1816';
+font-style: normal;
+font-weight: 400;
+font-size: 25px;
+line-height: 35px;
+max-width: 500px;
+/* page-break-after: always; */
+color: #000000;
+text-indent: -0.35em;
+position: absolute;
+max-width: 700px;
+}
+.Jimmy{
+  margin-top: 225px;
+}
+.Morgan{
+  margin-top: 400px;
+}
+.Brian{
+  margin-top: 220px ;
+}
+.Eileen{
+  margin-top: 430px;
+}
+.Rich{
+  margin-top: 190px ;
+}
+.Michelle{
+  margin-top: 440px;
+}
+.Grandma{
+  margin-top: 300px;
+}
+.Grandpa{
+  margin-top: 450px;
+}
+.Kathy{
+  margin-top: 250px;
+}
+.Mark{
+  margin-top: 550px;
+}
+h2{
+  position: absolute;
+width: 300px;
+height: auto;
+font-family: 'ITC Avant Garde Gothic Pro';
+font-style: normal;
+font-weight: 400;
+font-size: 35px;
+line-height: 200px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+page-break-after: always;
+/* page-break-before: always; */
+color: #000000;
+margin-top: -10px;
+margin-left: -20px;
+
+}
+h3{
+  position: absolute;
+  /* text-align: center; */
+  width: 300px;
+  height: auto;
+  margin-left: -25px;
+  font-family: 'ITC Avant Garde Gothic Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 70px;
+  line-height: 68px;
+  /* or 63% */
+  color: #000000;
+  /* transform: rotate(90deg); */
+}
+h4{
+font-family: 'Brother 1816';
+font-style: bold italic;
+font-size: 30px;
+line-height: 35px;
+position: absolute;
+top: 280px;
+width: 350px;
+/* text-align: center; */
+margin-left: -15px;
+}
+h5{
+  font-family: 'Brother 1816';
+font-style: bold italic;
+font-size: 20px;
+line-height: 35px;
+position: absolute;
+top: 280px;
+width: 350px;
+margin-top: 370px;
+margin-left: -15px;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
 body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+/* blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+} */
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}body {
   font-family: sans-serif;
   background: lightgray;
+  counter-reset: page;
+  background-color: linear-gradient(to bottom right, #6A82FB, #FC5C7D);
 }
 
 h2 {
@@ -14,15 +186,55 @@ h2 {
 }
 
 @page {
-  size: 5in 8in;
-  margin-top: 0.25in;
+
+ size: 4.75in 8in;  /* original width (5") – bleed (0.25") */
+ bleed: 0.25in;
+  margin-top: 0.5in;
   margin-bottom: 0.5in;
+  marks: crop;
+ 
 }
+
 @page:left {
-  margin-left: 0.25in;
-  margin-right: 1in;
+  @bottom-left {
+   content:"Welcome to your Golden Years";
+   max-width: 400px;
+   margin-left: 0.25in;
+ margin-right: 0.75in; /* original width (1") – bleed (0.25") */
+  }
+  @bottom-right {
+    font-size: 15px;
+    text-align: left;
+    margin-left: -80px;
+    content: counter(page);
+    margin-left: -500px;
+    font-size: 60px;
+    margin-bottom: -20px;
+  }
 }
 @page:right {
-  margin-left: 1in;
-  margin-right: 0.25in;
+  @bottom-left {
+    
+    font-size: 15px;
+    margin-right: -100px;
+    margin-left: 0.75in; 
+    margin-right: 0.25in; 
+    max-width: 600px;
+    line-height: 100zpx;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+   
+  }
+  @bottom-right {
+    
+  
+    
+  }
+}
+
+
+.two-col {
+  column-count: 3;
+  column-gap: 2em;
 }
